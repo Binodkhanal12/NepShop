@@ -1,0 +1,846 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "hello": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "hi": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "hey": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "good,morn": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "product,show": {
+            "intent": "show.products",
+            "domain": "default"
+          },
+          "electron,show": {
+            "intent": "show.category",
+            "domain": "default"
+          },
+          "book,show": {
+            "intent": "show.category",
+            "domain": "default"
+          },
+          "accessori,show": {
+            "intent": "show.category",
+            "domain": "default"
+          },
+          "cloth,show": {
+            "intent": "show.category",
+            "domain": "default"
+          },
+          "laptop,recommend": {
+            "intent": "recommend",
+            "domain": "default"
+          },
+          "laptop,suggest": {
+            "intent": "recommend",
+            "domain": "default"
+          },
+          "best,laptop": {
+            "intent": "recommend",
+            "domain": "default"
+          },
+          "game,laptop": {
+            "intent": "recommend",
+            "domain": "default"
+          },
+          "compar,product": {
+            "intent": "compare",
+            "domain": "default"
+          },
+          "and,asus,compar,dell": {
+            "intent": "compare",
+            "domain": "default"
+          },
+          "cheapest,product": {
+            "intent": "cheapest",
+            "domain": "default"
+          },
+          "expens,most,product": {
+            "intent": "expensive",
+            "domain": "default"
+          },
+          "bye": {
+            "intent": "bye",
+            "domain": "default"
+          },
+          "thank,you": {
+            "intent": "thanks",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greeting": "default",
+          "show.products": "default",
+          "show.category": "default",
+          "recommend": "default",
+          "compare": "default",
+          "cheapest": "default",
+          "expensive": "default",
+          "bye": "default",
+          "thanks": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "hello",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good morning",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "show products",
+            "intent": "show.products"
+          },
+          {
+            "domain": "default",
+            "utterance": "show electronics",
+            "intent": "show.category"
+          },
+          {
+            "domain": "default",
+            "utterance": "show books",
+            "intent": "show.category"
+          },
+          {
+            "domain": "default",
+            "utterance": "show accessories",
+            "intent": "show.category"
+          },
+          {
+            "domain": "default",
+            "utterance": "show clothing",
+            "intent": "show.category"
+          },
+          {
+            "domain": "default",
+            "utterance": "recommend laptop",
+            "intent": "recommend"
+          },
+          {
+            "domain": "default",
+            "utterance": "suggest laptop",
+            "intent": "recommend"
+          },
+          {
+            "domain": "default",
+            "utterance": "best laptop",
+            "intent": "recommend"
+          },
+          {
+            "domain": "default",
+            "utterance": "gaming laptop",
+            "intent": "recommend"
+          },
+          {
+            "domain": "default",
+            "utterance": "compare products",
+            "intent": "compare"
+          },
+          {
+            "domain": "default",
+            "utterance": "compare dell and asus",
+            "intent": "compare"
+          },
+          {
+            "domain": "default",
+            "utterance": "cheapest product",
+            "intent": "cheapest"
+          },
+          {
+            "domain": "default",
+            "utterance": "most expensive product",
+            "intent": "expensive"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye",
+            "intent": "bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "thank you",
+            "intent": "thanks"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "hello": 1,
+              "hi": 1,
+              "hey": 1,
+              "good": 1,
+              "morn": 1,
+              "show": 1,
+              "product": 1,
+              "electron": 1,
+              "book": 1,
+              "accessori": 1,
+              "cloth": 1,
+              "recommend": 1,
+              "laptop": 1,
+              "suggest": 1,
+              "best": 1,
+              "game": 1,
+              "compar": 1,
+              "dell": 1,
+              "and": 1,
+              "asus": 1,
+              "cheapest": 1,
+              "most": 1,
+              "expens": 1,
+              "bye": 1,
+              "thank": 1,
+              "you": 1
+            },
+            "intents": {
+              "greeting": 1,
+              "show.products": 1,
+              "show.category": 1,
+              "recommend": 1,
+              "compare": 1,
+              "cheapest": 1,
+              "expensive": 1,
+              "bye": 1,
+              "thanks": 1
+            },
+            "intentFeatures": {
+              "greeting": {
+                "hello": 1,
+                "hi": 1,
+                "hey": 1,
+                "good": 1,
+                "morn": 1
+              },
+              "show.products": {
+                "show": 1,
+                "product": 1
+              },
+              "show.category": {
+                "show": 1,
+                "electron": 1,
+                "book": 1,
+                "accessori": 1,
+                "cloth": 1
+              },
+              "recommend": {
+                "recommend": 1,
+                "laptop": 1,
+                "suggest": 1,
+                "best": 1,
+                "game": 1
+              },
+              "compare": {
+                "compar": 1,
+                "product": 1,
+                "dell": 1,
+                "and": 1,
+                "asus": 1
+              },
+              "cheapest": {
+                "cheapest": 1,
+                "product": 1
+              },
+              "expensive": {
+                "most": 1,
+                "expens": 1,
+                "product": 1
+              },
+              "bye": {
+                "bye": 1
+              },
+              "thanks": {
+                "thank": 1,
+                "you": 1
+              }
+            },
+            "featuresToIntent": {
+              "hello": [
+                "greeting"
+              ],
+              "hi": [
+                "greeting"
+              ],
+              "hey": [
+                "greeting"
+              ],
+              "good": [
+                "greeting"
+              ],
+              "morn": [
+                "greeting"
+              ],
+              "show": [
+                "show.products",
+                "show.category"
+              ],
+              "product": [
+                "show.products",
+                "compare",
+                "cheapest",
+                "expensive"
+              ],
+              "electron": [
+                "show.category"
+              ],
+              "book": [
+                "show.category"
+              ],
+              "accessori": [
+                "show.category"
+              ],
+              "cloth": [
+                "show.category"
+              ],
+              "recommend": [
+                "recommend"
+              ],
+              "laptop": [
+                "recommend"
+              ],
+              "suggest": [
+                "recommend"
+              ],
+              "best": [
+                "recommend"
+              ],
+              "game": [
+                "recommend"
+              ],
+              "compar": [
+                "compare"
+              ],
+              "dell": [
+                "compare"
+              ],
+              "and": [
+                "compare"
+              ],
+              "asus": [
+                "compare"
+              ],
+              "cheapest": [
+                "cheapest"
+              ],
+              "most": [
+                "expensive"
+              ],
+              "expens": [
+                "expensive"
+              ],
+              "bye": [
+                "bye"
+              ],
+              "thank": [
+                "thanks"
+              ],
+              "you": [
+                "thanks"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "hello",
+                "hi",
+                "hey",
+                "good",
+                "morn",
+                "show",
+                "product",
+                "electron",
+                "book",
+                "accessori",
+                "cloth",
+                "recommend",
+                "laptop",
+                "suggest",
+                "best",
+                "game",
+                "compar",
+                "dell",
+                "and",
+                "asus",
+                "cheapest",
+                "most",
+                "expens",
+                "bye",
+                "thank",
+                "you"
+              ],
+              "intents": [
+                "greeting",
+                "show.products",
+                "show.category",
+                "recommend",
+                "compare",
+                "cheapest",
+                "expensive",
+                "bye",
+                "thanks"
+              ],
+              "perceptrons": [
+                [
+                  8.981422424316406,
+                  8.980513572692871,
+                  8.975214958190918,
+                  4.494937419891357,
+                  4.494937419891357,
+                  -4.353398323059082,
+                  -3.7074761390686035,
+                  -0.9932864308357239,
+                  -0.96136873960495,
+                  -0.9465667009353638,
+                  -0.9424504637718201,
+                  -1.0984877347946167,
+                  -4.2538018226623535,
+                  -1.063265323638916,
+                  -1.0465281009674072,
+                  -1.0420135259628296,
+                  -1.9167814254760742,
+                  -1.126393437385559,
+                  -1.126393437385559,
+                  -1.126393437385559,
+                  -1.5883013010025024,
+                  -0.8203489780426025,
+                  -0.8203489780426025,
+                  -5.2630534172058105,
+                  -2.6465697288513184,
+                  -2.6465697288513184,
+                  5.294232223473452
+                ],
+                [
+                  -0.01329838391393423,
+                  -0.012755469419062138,
+                  -0.012234707362949848,
+                  -0.011444560252130032,
+                  -0.011444560252130032,
+                  7.423233509063721,
+                  9.174187660217285,
+                  -3.9108424186706543,
+                  -3.9177749156951904,
+                  -3.901602268218994,
+                  -3.872980833053589,
+                  -0.04320008307695389,
+                  -0.17490355670452118,
+                  -0.0387408547103405,
+                  -0.03431006148457527,
+                  -0.03015485778450966,
+                  -5.520789623260498,
+                  -0.017088113352656364,
+                  -0.017088113352656364,
+                  -0.017088113352656364,
+                  -5.51373291015625,
+                  -2.841421604156494,
+                  -2.841421604156494,
+                  -0.014454022981226444,
+                  -0.013518005609512329,
+                  -0.013518005609512329,
+                  -3.407602553796193
+                ],
+                [
+                  -0.890479326248169,
+                  -0.8805851340293884,
+                  -0.8727314472198486,
+                  -0.5332667231559753,
+                  -0.5332667231559753,
+                  8.94337272644043,
+                  -9.75899600982666,
+                  4.491540431976318,
+                  4.494042873382568,
+                  4.490026950836182,
+                  4.4836344718933105,
+                  -0.34595832228660583,
+                  -1.3914943933486938,
+                  -0.3107580840587616,
+                  -0.30208203196525574,
+                  -0.2673901319503784,
+                  -0.6328258514404297,
+                  -0.3465989828109741,
+                  -0.3465989828109741,
+                  -0.3465989828109741,
+                  -0.1933230459690094,
+                  -0.15995369851589203,
+                  -0.15995369851589203,
+                  -0.9104965329170227,
+                  -0.5853176712989807,
+                  -0.5853176712989807,
+                  0.8469773943935855
+                ],
+                [
+                  -1.0738716125488281,
+                  -1.0705478191375732,
+                  -1.069888949394226,
+                  -0.6199777126312256,
+                  -0.6199777126312256,
+                  -1.2017627954483032,
+                  -1.285070776939392,
+                  -0.2806069850921631,
+                  -0.26846054196357727,
+                  -0.23993544280529022,
+                  -0.21359671652317047,
+                  2.6422994136810303,
+                  10.572505950927734,
+                  2.6446797847747803,
+                  2.6435348987579346,
+                  2.6420233249664307,
+                  -0.8009072542190552,
+                  -0.38416361808776855,
+                  -0.38416361808776855,
+                  -0.38416361808776855,
+                  -0.40893083810806274,
+                  -0.3049488663673401,
+                  -0.3049488663673401,
+                  -1.0861862897872925,
+                  -0.6816002130508423,
+                  -0.6816002130508423,
+                  1.0700750333344757
+                ],
+                [
+                  -0.43944135308265686,
+                  -0.43186163902282715,
+                  -0.4241354465484619,
+                  -0.286460280418396,
+                  -0.286460280418396,
+                  -3.047879219055176,
+                  2.8317060470581055,
+                  -0.08129745721817017,
+                  -0.06992863118648529,
+                  -0.0602586530148983,
+                  -0.06117287278175354,
+                  -0.13916143774986267,
+                  -0.5321318507194519,
+                  -0.12517930567264557,
+                  -0.11144208163022995,
+                  -0.0985882431268692,
+                  11.105400085449219,
+                  0.9806820154190063,
+                  0.9806820154190063,
+                  0.9806820154190063,
+                  -3.0572586059570312,
+                  -1.541808009147644,
+                  -1.541808009147644,
+                  -0.4548931419849396,
+                  -0.3152473568916321,
+                  -0.3152473568916321,
+                  0.25690977913101565
+                ],
+                [
+                  -0.35248807072639465,
+                  -0.3496480882167816,
+                  -0.34724703431129456,
+                  -0.19900895655155182,
+                  -0.19900895655155182,
+                  -3.26682710647583,
+                  2.941981077194214,
+                  -0.027076521888375282,
+                  -0.021103637292981148,
+                  -0.016948368400335312,
+                  -0.013919796794652939,
+                  -0.07838181406259537,
+                  -0.2969285249710083,
+                  -0.07059041410684586,
+                  -0.06653392314910889,
+                  -0.05937732383608818,
+                  -3.2609071731567383,
+                  -0.01537426095455885,
+                  -0.01537426095455885,
+                  -0.01537426095455885,
+                  10.980109214782715,
+                  -1.6457196474075317,
+                  -1.6457196474075317,
+                  -0.3575783669948578,
+                  -0.2178547978401184,
+                  -0.2178547978401184,
+                  0.33708761034930085
+                ],
+                [
+                  -0.21676164865493774,
+                  -0.20998762547969818,
+                  -0.2034115493297577,
+                  -0.15110227465629578,
+                  -0.15110227465629578,
+                  -1.6318089962005615,
+                  1.6418946981430054,
+                  -0.03268023580312729,
+                  -0.026617230847477913,
+                  -0.022079912945628166,
+                  -0.01855279505252838,
+                  -0.07129025459289551,
+                  -0.27916431427001953,
+                  -0.06404948234558105,
+                  -0.05689556524157524,
+                  -0.050192803144454956,
+                  -1.6191158294677734,
+                  -0.018712712451815605,
+                  -0.018712712451815605,
+                  -0.018712712451815605,
+                  -1.6151410341262817,
+                  6.335033416748047,
+                  6.335033416748047,
+                  -0.22317256033420563,
+                  -0.1732502281665802,
+                  -0.1732502281665802,
+                  -0.02642831615194191
+                ],
+                [
+                  -1.5044113397598267,
+                  -1.5021231174468994,
+                  -1.4996739625930786,
+                  -0.7556413412094116,
+                  -0.7556413412094116,
+                  -1.2337474822998047,
+                  -1.0386366844177246,
+                  -0.2819668650627136,
+                  -0.2788607180118561,
+                  -0.2781986594200134,
+                  -0.27761110663414,
+                  -0.3057197630405426,
+                  -1.2104347944259644,
+                  -0.3022322356700897,
+                  -0.3014673888683319,
+                  -0.300832599401474,
+                  -0.5371696352958679,
+                  -0.32486480474472046,
+                  -0.32486480474472046,
+                  -0.32486480474472046,
+                  -0.4723144471645355,
+                  -0.23703229427337646,
+                  -0.23703229427337646,
+                  12.73715591430664,
+                  -0.7574892640113831,
+                  -0.7574892640113831,
+                  1.5135247278015063
+                ],
+                [
+                  -0.7254253625869751,
+                  -0.7217713594436646,
+                  -0.7196204662322998,
+                  -0.40044718980789185,
+                  -0.40044718980789185,
+                  -0.707827091217041,
+                  -0.5934348106384277,
+                  -0.16322380304336548,
+                  -0.1521756947040558,
+                  -0.14098955690860748,
+                  -0.13064880669116974,
+                  -0.1861378699541092,
+                  -0.6797022223472595,
+                  -0.17336107790470123,
+                  -0.16088971495628357,
+                  -0.1481643170118332,
+                  -0.32024481892585754,
+                  -0.1775023639202118,
+                  -0.1775023639202118,
+                  -0.1775023639202118,
+                  -0.20915278792381287,
+                  -0.13075606524944305,
+                  -0.13075606524944305,
+                  -0.7179641127586365,
+                  6.783483028411865,
+                  6.783483028411865,
+                  0.718570845354874
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "hey"
+      ],
+      [
+        "en",
+        "good morning"
+      ],
+      [
+        "en",
+        "show products"
+      ],
+      [
+        "en",
+        "show electronics"
+      ],
+      [
+        "en",
+        "show books"
+      ],
+      [
+        "en",
+        "show accessories"
+      ],
+      [
+        "en",
+        "show clothing"
+      ],
+      [
+        "en",
+        "recommend laptop"
+      ],
+      [
+        "en",
+        "suggest laptop"
+      ],
+      [
+        "en",
+        "best laptop"
+      ],
+      [
+        "en",
+        "gaming laptop"
+      ],
+      [
+        "en",
+        "compare products"
+      ],
+      [
+        "en",
+        "compare dell and asus"
+      ],
+      [
+        "en",
+        "cheapest product"
+      ],
+      [
+        "en",
+        "most expensive product"
+      ],
+      [
+        "en",
+        "bye"
+      ],
+      [
+        "en",
+        "thank you"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "greeting": [
+          {
+            "answer": "Hello 👋 Welcome to NepShop! How can I help you today?"
+          }
+        ],
+        "thanks": [
+          {
+            "answer": "You're welcome 😊"
+          }
+        ],
+        "bye": [
+          {
+            "answer": "Goodbye! Have a wonderful day."
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}

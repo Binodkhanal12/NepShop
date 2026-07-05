@@ -1,0 +1,46 @@
+What is the algorithm of your e-commerce platform?
+Algorithm of the E-commerce Platform
+   Step 1: Start the application
+1.Start the backend server.
+2.Connect the backend to MongoDB.
+3.Start the frontend React application.
+  Step 2: User opens the website
+1.User enters the website URL.
+2.React loads the homepage.
+3.Frontend requests product data from the backend.
+  Step 3: Backend processes the request
+1.Backend receives the request.
+2.Backend queries MongoDB.
+3.MongoDB returns the requested data.
+4.Backend sends the response to the frontend.
+  Step 4: Display products
+1.React receives product data.
+2.Products are displayed on the webpage.
+Step 5: User authentication
+1.User enters email and password.
+2.Frontend sends login request.
+3.Backend verifies credentials from MongoDB.
+ If valid:
+#Generate JWT token.
+#Return success response.
+Else:
+#Return authentication error.
+  Step 6: Add to Cart
+1.User clicks Add to Cart.
+2.Frontend sends cart request.
+3.Backend stores or updates the cart in MongoDB.
+4.Updated cart is returned.
+  Step 7: Place Order
+1.User proceeds to checkout.
+2.Backend validates the cart.
+3.Order information is saved in MongoDB.
+4.Cart is cleared.
+5.Order confirmation is returned.
+  Step 8: Admin Operations
+1.Admin logs in.
+2.Admin can:
+#Add products
+ #Update products
+ #Delete products
+3.MongoDB is updated.
+4.Updated product list is shown to users.
