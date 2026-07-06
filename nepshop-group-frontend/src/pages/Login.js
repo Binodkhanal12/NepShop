@@ -97,7 +97,7 @@ export default function Login() {
               color: '#2dd4bf', letterSpacing: '1px'
             }}>
               <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#2dd4bf', boxShadow: '0 0 6px #2dd4bf' }} />
-              NepShop Group Store v2.0
+              NepShop  Store 
             </div>
 
             <h1 style={{

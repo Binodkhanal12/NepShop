@@ -12,18 +12,22 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET single product
-router.get('/:id', async (req, res) => {
+// GET single product by slug
+router.get('/:slug', async (req, res) => {
   try {
-    const product = await Product.findById(req.params.id);
-    if (!product) return res.status(404).json({ message: 'Product not found' });
+    const product = await Product.findOne({ slug: req.params.slug });
+
+    if (!product) {
+      return res.status(404).json({ message: 'Product not found' });
+    }
+
     res.json(product);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 });
 
-// CREATE product (admin only for now)
+// CREATE product
 router.post('/', async (req, res) => {
   try {
     const product = new Product(req.body);
@@ -34,16 +38,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// DELETE product
-router.delete('/:id', async (req, res) => {
-  try {
-    await Product.findByIdAndDelete(req.params.id);
-    res.json({ message: 'Product deleted' });
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-});
-// UPDATE product
+// UPDATE product by ID
 router.put('/:id', async (req, res) => {
   try {
     const product = await Product.findByIdAndUpdate(
@@ -51,7 +46,27 @@ router.put('/:id', async (req, res) => {
       req.body,
       { new: true }
     );
+
+    if (!product) {
+      return res.status(404).json({ message: 'Product not found' });
+    }
+
     res.json(product);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+// DELETE product by ID
+router.delete('/:id', async (req, res) => {
+  try {
+    const product = await Product.findByIdAndDelete(req.params.id);
+
+    if (!product) {
+      return res.status(404).json({ message: 'Product not found' });
+    }
+
+    res.json({ message: 'Product deleted' });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

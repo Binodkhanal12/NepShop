@@ -6,38 +6,54 @@ const productSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
+
+  slug: {
+    type: String,
+    unique: true,
+    lowercase: true,
+    trim: true
+  },
+
   description: {
     type: String,
     required: true
   },
+
   price: {
     type: Number,
     required: true
   },
+
   category: {
     type: String,
     required: true
   },
+
   image: {
     type: String,
     default: ''
   },
+
   images: {
     type: [String],
     default: []
   },
+
   stock: {
     type: Number,
     default: 0
   },
+
   ratings: {
     type: Number,
     default: 0
   },
+
   numReviews: {
     type: Number,
     default: 0
   }
+
 }, { timestamps: true });
 
 module.exports = mongoose.model('Product', productSchema);

@@ -103,7 +103,7 @@ function ProductCard({ product, index, onAddToCart, selectedColor }) {
       {/* 3D Canvas */}
       {/* Product Image */}
 <div
-  onClick={() => navigate(`/products/${product._id}`)}
+  onClick={() => navigate(`/products/${product.slug}`)}
   style={{
     height: '220px',
     borderBottom: '2px solid #1E293B',
@@ -171,7 +171,7 @@ function ProductCard({ product, index, onAddToCart, selectedColor }) {
       {/* Product info */}
       <div style={{ padding: '20px' }}>
         <h3
-          onClick={() => navigate(`/products/${product._id}`)}
+          onClick={() => navigate(`/products/${product.slug}`)}
           style={{
             fontSize: '16px', fontWeight: 700,
             color: '#1E293B', marginBottom: '6px',

@@ -229,7 +229,7 @@ function ProductCarousel({ product, selectedColor }) {
 }
 
 export default function ProductDetail() {
-  const { id } = useParams();
+  const { slug } = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState(null);
   const [recommendations, setRecommendations] = useState([]);
@@ -238,11 +238,11 @@ export default function ProductDetail() {
   const [selectedColor, setSelectedColor] = useState(COLORS[4]);
   const [addingToCart, setAddingToCart] = useState(false);
 
-  useEffect(() => { fetchProduct(); }, [id]);
+  useEffect(() => { fetchProduct(); }, [slug]);
 
   const fetchProduct = async () => {
     try {
-      const res = await axios.get(`${API}/products/${id}`);
+      const res = await axios.get(`${API}/products/${slug}`);
       setProduct(res.data);
       fetchRecommendations(res.data.category);
     } catch (err) {
@@ -256,7 +256,7 @@ export default function ProductDetail() {
     try {
       const token = localStorage.getItem('token');
       const res = await axios.post(`${API}/ai/recommend`,
-        { category, current_product_id: id },
+        { category, current_product_slug: slug },
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setRecommendations(res.data.recommendations);

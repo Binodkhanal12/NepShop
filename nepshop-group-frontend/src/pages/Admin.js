@@ -168,7 +168,7 @@ export default function Admin() {
               color: '#1E293B', fontFamily: '"Outfit", sans-serif'
             }}>Store Dashboard</h1>
             <p style={{ color: '#64748B', marginTop: '8px' }}>
-              Manage your Patas Group products
+              Manage your NepShop Group products
             </p>
           </div>
           <motion.button

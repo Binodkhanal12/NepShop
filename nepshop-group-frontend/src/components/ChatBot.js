@@ -7,7 +7,7 @@ const API = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 export default function ChatBot() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { from: 'bot', text: 'Hey! 👋 Welcome to NepShop Group Store! How can I help you today?' }
+    { from: 'bot', text: 'Hey! 👋 Welcome to NepShop Store! How can I help you today?' }
   ]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);

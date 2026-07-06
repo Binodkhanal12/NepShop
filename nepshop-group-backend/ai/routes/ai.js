@@ -4,6 +4,7 @@ const Product = require("../models/Product");
 const { manager } = require("../ai/chatbot");
 
 router.post("/chat", async (req, res) => {
+  console.log("✅ Local AI route reached");
   try {
     const { message } = req.body;
 

@@ -12,6 +12,7 @@ import ChatBot from './components/ChatBot';
 import './index.css';
 import Admin from './pages/Admin';
 import ForgotPassword from "./pages/ForgotPassword";
+//import ChatBot from "./components/ChatBot";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/products/:id" element={<ProductDetail />} />
+        <Route path="/products/:slug" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

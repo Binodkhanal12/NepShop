@@ -19,7 +19,7 @@ export default function Register() {
       const res = await axios.post(`${API}/auth/register`, form);
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user));
-      toast.success('Welcome to Patas Group! 🎉');
+      toast.success('Welcome to NepShop Group! 🎉');
       navigate('/products');
     } catch (err) {
       toast.error(err.response?.data?.message || 'Registration failed!');
