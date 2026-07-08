@@ -253,11 +253,38 @@ export default function Products() {
   useEffect(() => { fetchProducts(); fetchRecommendations(); }, []);
 
   useEffect(() => {
-    let result = products;
-    if (category !== 'All') result = result.filter(p => p.category === category);
-    if (search) result = result.filter(p => p.name.toLowerCase().includes(search.toLowerCase()));
-    setFiltered(result);
-  }, [category, search, products]);
+  let result = [...products];
+
+  // Category filter
+  if (category !== "All") {
+    result = result.filter(
+      product => product.category === category
+    );
+  }
+
+  // Search filter
+  if (search) {
+    result = result.filter(product =>
+      product.name.toLowerCase().includes(search.toLowerCase())
+    );
+  }
+
+  // Color filter
+  if (selectedColor) {
+    const selected = COLORS.find(
+      color => color.hex === selectedColor
+    );
+
+    if (selected) {
+      result = result.filter(
+        product => product.color === selected.name
+      );
+    }
+  }
+
+  setFiltered(result);
+
+}, [products, category, search, selectedColor]);
 
   const fetchProducts = async () => {
     try {
